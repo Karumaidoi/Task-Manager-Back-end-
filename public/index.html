@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" manifest="sample.appcache">
+  <head>
+    <!--replace with any of your main title of your webpage-->
+
+    <title>Task Manager&mdash; Manage your Daily tasks like a PRO</title>
+
+    <!--metadata content should appear here-->
+    <meta charset="UTF-8" />
+    <meta name="description" content="A task manager for anyone at anytime" />
+    <meta
+      name="Keywords"
+      content="Task, Task Mangaer, Bestypie ,Alchemist Task Manager"
+    />
+
+    <!--replace with any of your fontface your design is going to use! Strictly from Google Fonts-->
+
+    <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
+
+    <!--replace with any of your icomoon icons path folder-->
+    <link rel="stylesheet" href="css/icon-font.css" />
+
+    <!--replace with any of your shortcut icon-->
+    <link rel="shortcut icon" type="img/png" href="/img/favicon/codewars.svg" />
+
+    <!--replace with any of your css layout folder/path-->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Script inclusing Fonts -->
+    <style>
+      @import url("http://fonts.cdnfonts.com/css/sofia-pro");
+    </style>
+  </head>
+
+  <!--This is the part of the page that will be visible within your Website.
+    Replace the content according to the any of layout of your choice!-->
+  <body>
+    <div class="addTODO hidden">
+      <div class="section-signup__form todo">
+        <h1 style="margin-bottom: 1rem">ADD WORKSPACE</h1>
+        <p style="margin-bottom: 2.5rem">
+          All your workspaces with be synchronized to our database.
+        </p>
+        <form action="#">
+          <div class="form-group">
+            <label for="email">TODO</label>
+            <input
+              type="text"
+              placeholder="Designing a Hotel Website"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="2"
+              required
+            ></textarea>
+          </div>
+
+          <!-- TIME -->
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+            class="form-group"
+          >
+            <label for="email" class="u-mg-right">Start</label>
+            <input
+              class="u-mg-right"
+              type="time"
+              placeholder="Designing a Hotel Website"
+              required
+            />
+
+            <label for="email" class="u-mg-right">Finish</label>
+            <input
+              type="time"
+              placeholder="Designing a Hotel Website"
+              required
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+            class="form-group"
+          >
+            <label for="email" class="u-mg-right">Date</label>
+            <input
+              class="u-mg-right"
+              type="date"
+              placeholder="Designing a Hotel Website"
+              required
+            />
+
+            <label for="select" class="u-mg-right">Type</label>
+            <div class="select">
+              <select name="types" id="select">
+                <option value="1">Design</option>
+                <option value="2">Development</option>
+                <option value="3">Adobe Photoshop</option>
+                <option value="4">VS Code</option>
+                <option value="5">Flutter</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CheckBox -->
+          <div class="form-group3 u-mg-btm">
+            <div class="flex-container">
+              <div class="flex">
+                <input type="radio" name="task" id="todonew" checked />
+                <label for="todonew">To Do</label>
+              </div>
+              <div class="flex">
+                <input type="radio" name="task" id="InProgress" />
+                <label for="InProgress">In Progress</label>
+              </div>
+              <div class="flex">
+                <input type="radio" name="task" id="review" />
+                <label for="review">Review</label>
+              </div>
+              <div class="flex">
+                <input type="radio" name="task" id="done" />
+                <label for="done">Done</label>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="form-group2">
+            <label for="files">Choose Image Cover</label>
+            <input class="form__upload" type="file" id="files" hidden />
+          </div>
+          <div class="form-group">
+            <div class="flex u-mg-topMain">
+              <button type="reset" class="btn-active cancelBtn">Cancel</button>
+              <button type="submit" class="btn-find">Publish Workspace</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container__nav">
+        <!-- ACCOUNTS -->
+        <div class="container__nav__acc">
+          <img src="./img/users/default.jpg" alt="user" />
+          <div class="container__nav__acc--active">
+            <h4>A</h4>
+          </div>
+        </div>
+
+        <!-- LINKS -->
+        <div class="container__nav__links">
+          <div class="container__nav__links--btn">
+            <a href="#" class="active">
+              <svg class="icon icon--active">
+                <use xlink:href="./css/sprite.svg#icon-folder"></use>
+              </svg>
+            </a>
+            <a href="/notfound.html">
+              <svg class="icon">
+                <use xlink:href="./css/sprite.svg#icon-mail"></use>
+              </svg>
+            </a>
+            <a href="/notfound.html">
+              <svg class="icon">
+                <use xlink:href="./css/sprite.svg#icon-pie-chart"></use>
+              </svg>
+            </a>
+            <a href="/notfound.html">
+              <svg class="icon">
+                <use xlink:href="./css/sprite.svg#icon-wallet"></use>
+              </svg>
+            </a>
+            <a href="/notfound.html">
+              <svg class="icon">
+                <use xlink:href="./css/sprite.svg#icon-calendar"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- LOGOUT -->
+        <div class="container__nav__logout">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="./css/sprite.svg#icon-log-out"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="container__body">
+        <div class="container__body--top">
+          <div class="container__body--top__links">
+            <a href="/index.html" class="active-link">Projects</a>
+            <a href="/notfound.html">Planning</a>
+            <a href="/notfound.html">Calendar</a>
+            <a href="/notfound.html">Team</a>
+          </div>
+          <button class="btn">
+            <p>see more of our products</p>
+          </button>
+        </div>
+        <div class="container__body--bottom">
+          <div class="container__body--bottom--top">
+            <h2>Board</h2>
+            <div class="container__body--top__search">
+              <form class="search" action="#" method="get">
+                <svg class="icon">
+                  <use xlink:href="./css/sprite.svg#icon-search"></use>
+                </svg>
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  placeholder="Search"
+                  autocomplete="off"
+                />
+              </form>
+            </div>
+          </div>
+
+          <!-- BOARDS -->
+          <div class="container__body--bottom--grids">
+            <div class="container__body--bottom--grids__todo">
+              <div class="container__body--bottom--grids__todo--cat">
+                <h2>To Do</h2>
+                <button class="iconButton addTask">
+                  <svg class="icon">
+                    <use xlink:href="./css/sprite.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <img src="./img/tasks/placeholder.webp" alt="user" />
+                </div>
+
+                <div class="card-title">
+                  <div class="card-title__avatar">
+                    <img src="./img/users/default.jpg" alt="user" />
+                  </div>
+
+                  <div class="card-title__description">
+                    <h2 class="heading-secondary">
+                      Create Design for Travel Application
+                    </h2>
+                  </div>
+
+                  <div class="card-title__more">
+                    <button class="iconButton popupmenu">
+                      <svg class="icon">
+                        <use
+                          xlink:href="./css/sprite.svg#icon-dots-three-horizontal"
+                        ></use>
+                      </svg>
+                      <div class="popupmenu--cta hidden">
+                        <div class="popupmenu--cta__links">
+                          <ul>
+                            <li>
+                              <a href="#">Edit</a>
+                            </li>
+                            <li>
+                              <a href="#">Delete</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="card-chips">
+                  <p class="chip">iOS App</p>
+                  <p class="chip2">iOS App</p>
+                </div>
+
+                <div class="card-description u-mg-top">
+                  <p class="long-copy">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita amet quasi pariatur quaerat vero quod.
+                  </p>
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-footer__time u-mg-right">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-clock"></use>
+                    </svg>
+                    <span>9:00 AM -</span>
+                    <span>5:00 PM </span>
+                  </div>
+
+                  <div class="card-footer__time">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-calendar"></use>
+                    </svg>
+                    <span>30 Oct 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container__body--bottom--grids__todo">
+              <div class="container__body--bottom--grids__todo--cat">
+                <h2>In Progress</h2>
+                <button class="iconButton addTask">
+                  <svg class="icon">
+                    <use xlink:href="./css/sprite.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="card">
+                <div class="card-image">
+                  <img src="./img/tasks/todo.jpg" alt="user" />
+                </div>
+
+                <div class="card-title">
+                  <div class="card-title__avatar">
+                    <img src="./img/users/default.jpg" alt="user" />
+                  </div>
+
+                  <div class="card-title__description">
+                    <h2 class="heading-secondary">
+                      Create Wireframe for a Hotel website
+                    </h2>
+                  </div>
+
+                  <div class="card-title__more">
+                    <button class="iconButton popupmenu">
+                      <svg class="icon">
+                        <use
+                          xlink:href="./css/sprite.svg#icon-dots-three-horizontal"
+                        ></use>
+                      </svg>
+                      <div class="popupmenu--cta hidden">
+                        <div class="popupmenu--cta__links">
+                          <ul>
+                            <li>
+                              <a href="#">Edit</a>
+                            </li>
+                            <li>
+                              <a href="#">Delete</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="card-chips">
+                  <p class="chip">Website</p>
+                </div>
+
+                <div class="card-description u-mg-top">
+                  <p class="long-copy">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita amet quasi pariatur quaerat vero quod.
+                  </p>
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-footer__time u-mg-right">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-clock"></use>
+                    </svg>
+                    <span>9:00 AM -</span>
+                    <span>5:00 PM </span>
+                  </div>
+
+                  <div class="card-footer__time">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-calendar"></use>
+                    </svg>
+                    <span>30 Oct 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container__body--bottom--grids__todo">
+              <div class="container__body--bottom--grids__todo--cat">
+                <h2>Review</h2>
+                <button class="iconButton addTask">
+                  <svg class="icon">
+                    <use xlink:href="./css/sprite.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="card">
+                <div class="card-title">
+                  <div class="card-title__avatar">
+                    <img src="./img/users/avatar.jpg" alt="user" />
+                  </div>
+
+                  <div class="card-title__description">
+                    <h2 class="heading-secondary">
+                      Creation a corporate identity
+                    </h2>
+                  </div>
+
+                  <div class="card-title__more">
+                    <button class="iconButton popupmenu">
+                      <svg class="icon">
+                        <use
+                          xlink:href="./css/sprite.svg#icon-dots-three-horizontal"
+                        ></use>
+                      </svg>
+                      <div class="popupmenu--cta hidden">
+                        <div class="popupmenu--cta__links">
+                          <ul>
+                            <li>
+                              <a href="#">Edit</a>
+                            </li>
+                            <li>
+                              <a href="#">Delete</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="card-chips">
+                  <p class="chip2">Social Media</p>
+                  <p class="chip">Marketing</p>
+                </div>
+
+                <div class="card-description u-mg-top">
+                  <p class="long-copy">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita amet quasi pariatur quaerat vero quod.
+                  </p>
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-footer__time u-mg-right">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-clock"></use>
+                    </svg>
+                    <span>10:00 AM -</span>
+                    <span>3:30 PM </span>
+                  </div>
+
+                  <div class="card-footer__time">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-calendar"></use>
+                    </svg>
+                    <span>1 Nov 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container__body--bottom--grids__todo">
+              <div class="container__body--bottom--grids__todo--cat">
+                <h2>Done</h2>
+                <button class="iconButton addTask">
+                  <svg class="icon">
+                    <use xlink:href="./css/sprite.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="card">
+                <div class="card-title">
+                  <div class="card-title__avatar">
+                    <img src="./img/users/avatar.jpg" alt="user" />
+                  </div>
+
+                  <div class="card-title__description">
+                    <h2 class="heading-secondary">
+                      Presentation for Mars Company
+                    </h2>
+                  </div>
+
+                  <div class="card-title__more">
+                    <button class="iconButton popupmenu">
+                      <svg class="icon">
+                        <use
+                          xlink:href="./css/sprite.svg#icon-dots-three-horizontal"
+                        ></use>
+                      </svg>
+                      <div class="popupmenu--cta hidden">
+                        <div class="popupmenu--cta__links">
+                          <ul>
+                            <li>
+                              <a href="#">Edit</a>
+                            </li>
+                            <li>
+                              <a href="#">Delete</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="card-chips">
+                  <p class="chip">Adobe Photoshop</p>
+                </div>
+
+                <div class="card-description u-mg-top">
+                  <p class="long-copy">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita amet quasi pariatur quaerat vero quod.
+                  </p>
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-footer__time u-mg-right">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-clock"></use>
+                    </svg>
+                    <span>10:00 AM -</span>
+                    <span>3:30 PM </span>
+                  </div>
+
+                  <div class="card-footer__time">
+                    <svg class="icon icon--active u-mg-right">
+                      <use xlink:href="./css/sprite.svg#icon-calendar"></use>
+                    </svg>
+                    <span>13 March 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "taskmate",
+  "version": "1.0.0",
+  "description": "taskmate kenya",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "alex maina",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.13",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.14"
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" manifest="sample.appcache">
+  <head>
+    <!--replace with any of your main title of your webpage-->
+
+    <title>Task Manager &mdash; Manage your tasks like a PRO</title>
+
+    <!--metadata content should appear here-->
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A task manager that suits individuals, teams and enterprise"
+    />
+    <meta name="Keywords" content="Free Task Manager, Alchemist, Kenya " />
+
+    <!--replace with any of your fontface your design is going to use! Strictly from Google Fonts-->
+
+    <!--replace with any of your icomoon icons path folder-->
+    <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
+
+    <!--replace with any of your shortcut icon-->
+    <link rel="shortcut icon" type="img/png" href="/img/favicon/codewars.svg" />
+
+    <!--replace with any of your css layout folder/path-->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      @import url("http://fonts.cdnfonts.com/css/sofia-pro");
+    </style>
+  </head>
+
+  <!--This is the part of the page that will be visible within your Website.
+    Replace the content according to the any of layout of your choice!-->
+  <body style="overflow-y: scroll">
+    <header class="header__nav">
+      <div class="header__nav--content">
+        <div class="header__nav--content--fav">
+          <div class="header__nav--content--fav__img">
+            <img src="./img//favicon/codewars.svg" alt="fav" />
+            <h2 class="u-mg-right2">Alchemist</h2>
+          </div>
+
+          <div class="header__nav--content--fav__btn">
+            <a href=""
+              ><button class="headerBtn">Individuals & Teams</button></a
+            >
+          </div>
+        </div>
+        <div class="header__nav--btns">
+          <!-- <a href=""><button class="headerBtn2">Go to Task Mate</button></a> -->
+          <a href="/index.html"
+            ><button class="btn-help u-mg-right">Log In</button></a
+          >
+          <a href="/index.html"><button class="btn">Sign Up</button></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-signup">
+        <div class="section-signup__form">
+          <h1>LOG INTO YOUR ACCOUNT</h1>
+          <form action="#">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Password</label>
+              <input
+                type="password"
+                placeholder="••••••••"
+                minlength="8"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <button class="btn">LOGIN</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__left">
+        <div class="footer__left--img">
+          <img src="/img/favicon/codewars.svg" alt="logo" />
+          <h1>TASK MATE</h1>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__right--links">
+          <ul>
+            <li>
+              <a href="#">About us</a>
+            </li>
+            <li>
+              <a href="#">Download Apps</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2021 by Bestypie Kenya</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
